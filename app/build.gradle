@@ -42,4 +42,5 @@ dependencies {
     compile 'com.taobao.android:weex_sdk:0.11.0'
     compile 'com.taobao.android:weex_inspector:0.10.0.5'
     compile 'com.aliyun.ams:alicloud-android-ut:5.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
