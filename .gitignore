@@ -8,3 +8,5 @@
 .idea
 /captures
 .externalNativeBuild
+将删除 app/libs/
+将删除 app/src/main/res/drawable/

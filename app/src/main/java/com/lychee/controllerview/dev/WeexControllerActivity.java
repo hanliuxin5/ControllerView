@@ -14,7 +14,6 @@ import com.lychee.controllerview.weex.AbstractWeexActivity;
 import com.lychee.controllerview.weex.events.ControllerChange;
 import com.lychee.controllerview.weex.view.ControllerView;
 import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.utils.WXFileUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -66,7 +65,7 @@ public class WeexControllerActivity extends AbstractWeexActivity {
                 params = initUri(uri);
             }
         }
-        setContentView(R.layout.activity_controller);
+        setContentView(R.layout.activity_controller_weex);
         ButterKnife.bind(this);
 
         setContainer(flController);

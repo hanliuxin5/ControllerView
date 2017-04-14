@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".dev.ControllerActivity" />
         <activity android:name=".dev.WeexControllerActivity">
             <intent-filter>
                 <action android:name="android.scheme.controller" />

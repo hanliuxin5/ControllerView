@@ -25,7 +25,7 @@ import butterknife.Unbinder;
  * Created by lychee on 17-4-5.
  */
 
-public class WeexControllerFragment extends AbstractWeexFragment implements IWXRenderListener {
+public class WeexControllerFragment2 extends AbstractWeexFragment implements IWXRenderListener {
 
     @BindView(R.id.fl_controller)
     ControllerView flController;
@@ -36,22 +36,17 @@ public class WeexControllerFragment extends AbstractWeexFragment implements IWXR
     Unbinder unbinder;
 
     private String sUri;
-    private int width;
-    private int height;
 
-    private HashMap<String, String> params;
     private ProgressBar progressBar;
 
-    public WeexControllerFragment() {
+    public WeexControllerFragment2() {
 
     }
 
-    public static WeexControllerFragment newInstance(ControllerView cv) {
+    public static WeexControllerFragment2 newInstance(String url) {
         Bundle bundle = new Bundle();
-        bundle.putString("sUri", cv.getUrl());
-        bundle.putInt("width", cv.getWidth());
-        bundle.putInt("height", cv.getHeight());
-        WeexControllerFragment controllerFragment = new WeexControllerFragment();
+        bundle.putString("sUri", url);
+        WeexControllerFragment2 controllerFragment = new WeexControllerFragment2();
         controllerFragment.setArguments(bundle);
         return controllerFragment;
     }
@@ -62,9 +57,6 @@ public class WeexControllerFragment extends AbstractWeexFragment implements IWXR
         Bundle bundle = getArguments();
         if (bundle != null) {
             this.sUri = bundle.getString("sUri");
-            this.width = bundle.getInt("width");
-            this.height = bundle.getInt("height");
-            params = new HashMap<>();
 
         }
     }
@@ -75,7 +67,6 @@ public class WeexControllerFragment extends AbstractWeexFragment implements IWXR
         View layout = inflater.inflate(R.layout.fragment_controller_weex, container, false);
         flController = (ControllerView) layout.findViewById(R.id.fl_controller);
         progressBar = (ProgressBar) layout.findViewById(R.id.progress);
-        layout.setLayoutParams(new FrameLayout.LayoutParams(width, height));
         setContainer(flController);
         flController.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
@@ -92,11 +83,6 @@ public class WeexControllerFragment extends AbstractWeexFragment implements IWXR
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
-    }
-
-
-    public String getsUri() {
-        return sUri == null ? "" : sUri;
     }
 
 
