@@ -1,5 +1,5 @@
 # **DEMO使用**
-
+**本项目假设您有一定基础的原生开发经验**
 提供了
 ```
 <controller src="*.js" tag="lychee"></controller>
