@@ -11,7 +11,7 @@ import com.taobao.weex.common.WXException;
  * Created by lychee on 17-2-21.
  */
 
-public class PlusApp extends Application {
+public class DemoApplication extends Application {
 
 
     @Override

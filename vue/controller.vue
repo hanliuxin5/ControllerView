@@ -1,21 +1,17 @@
 <template>
   <div class="body">
-      <controller style="width: 750px;flex:1;" :src="src" tag="lychee" ></controller>
+      <controller style="width:750px;flex: 1" :src="src" tag="lychee"></controller>
+      <controller style="width:500px;flex: 1;margin-top: 20px;"
+                  src="http://192.168.0.119:8080/dist/fragment4.js"
+                  tag="lychee1"></controller>
       <div class="toolbar">
         <div class="toolbar_btn" @click="function_src(1)">1</div>
         <div class="toolbar_btn" @click="function_src(2)">2</div>
         <div class="toolbar_btn" @click="function_src(3)">3</div>
-        <div class="toolbar_btn" @click="function_src(4)">4</div>
       </div>
   </div>
 </template>
 <script>
-var globalEvent=weex.requireModule('globalEvent');
-
-globalEvent.addEventListener("activity", function (result) {
-        console.log("get activity");
-  });
-
   export default {
     data () {
       return {
@@ -34,9 +30,6 @@ globalEvent.addEventListener("activity", function (result) {
             break;
           case 3:
             _this.src = 'http://192.168.0.110:8080/dist/fragment3.js';
-            break;
-          case 4:
-          _this.src = 'http://192.168.0.110:8080/dist/fragment4.js';
             break;
         }
       }
