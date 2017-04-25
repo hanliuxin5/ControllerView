@@ -1,4 +1,4 @@
-package com.lychee.controllerview.weex.view;
+package com.lychee.controllerview.controllerView;
 
 import android.annotation.TargetApi;
 import android.content.Context;

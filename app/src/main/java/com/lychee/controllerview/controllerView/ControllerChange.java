@@ -1,4 +1,4 @@
-package com.lychee.controllerview.weex.events;
+package com.lychee.controllerview.controllerView;
 
 
 /**
@@ -8,10 +8,12 @@ package com.lychee.controllerview.weex.events;
 public class ControllerChange {
     private String url;
     private String hostId;
+    private String tag;
 
-    public ControllerChange(String url, String hostId) {
+    public ControllerChange(String url, String hostId, String tag) {
         this.url = url;
         this.hostId = hostId;
+        this.tag = tag;
     }
 
     public String getUrl() {
@@ -21,6 +23,10 @@ public class ControllerChange {
 
     public String getHostId() {
         return hostId;
+    }
+
+    public String getTag() {
+        return tag;
     }
 
 }

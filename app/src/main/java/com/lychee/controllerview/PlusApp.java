@@ -2,7 +2,7 @@ package com.lychee.controllerview;
 
 import android.app.Application;
 
-import com.lychee.controllerview.weex.component.Controller;
+import com.lychee.controllerview.controllerView.Controller;
 import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;

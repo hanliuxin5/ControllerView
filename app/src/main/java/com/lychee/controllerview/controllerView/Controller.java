@@ -1,11 +1,9 @@
-package com.lychee.controllerview.weex.component;
+package com.lychee.controllerview.controllerView;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.lychee.controllerview.weex.events.ControllerChange;
-import com.lychee.controllerview.weex.view.ControllerView;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.dom.WXDomObject;
 import com.taobao.weex.ui.component.WXComponent;
@@ -21,6 +19,7 @@ import org.greenrobot.eventbus.EventBus;
 
 public class Controller extends WXComponent {
     private String instanceId;
+    private String tag;
 
     public Controller(WXSDKInstance instance, WXDomObject dom, WXVContainer parent) {
         super(instance, dom, parent);
@@ -38,7 +37,7 @@ public class Controller extends WXComponent {
     public void setSrc(String src) {
         ControllerView cv = (ControllerView) getRealView();
         cv.setUrl(src);
-        EventBus.getDefault().post(new ControllerChange(src, cv.getHostId()));
+        EventBus.getDefault().post(new ControllerChange(src, cv.getHostId(), tag));
     }
 
 
@@ -47,6 +46,7 @@ public class Controller extends WXComponent {
     public void setTag(String tag) {
         ControllerView cv = (ControllerView) getRealView();
         cv.setTag(tag);
+        this.tag = tag;
     }
 
 
